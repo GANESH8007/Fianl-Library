@@ -1,0 +1,149 @@
+
+<div class="container">
+    <h2 class="py-1">ALL BOOKS</h2>
+    <div class="row ">
+        <div class="form-group mb-4">
+            <input class="form-control" type="text" [(ngModel)]="searchText" placeholder="Search">
+          </div>
+    <table class="table" *ngIf="(books | filter: searchText).length > 0; else noResults">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">LOGO</th>
+                <th scope="col">TITLE</th>
+                <th scope="col">CATEGORY</th>
+                <th scope="col">PRICE</th>
+                <th scope="col">AUTHOR</th>
+                <th scope="col">PUBLISHER</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let b of books | filter: searchText; index as i">
+                <th scope="row">{{i + 1}}</th>
+                <td><img src={{b.logo}} id="logo"/></td>
+                <td>{{b.title}}</td>
+                <td>{{b.category}}</td>
+                <td>{{b.price}}</td>
+                <td>{{b.author}}</td>
+                <td>{{b.publisher}}</td>
+                <!-- {{b.published_date}}
+                {{b.chaptersOrContent}}
+                {{b.active}} -->
+
+
+                <td><button type="button"   (click)="updateBook(b, i)" style="margin-right:500;"
+                    class="btn btn-warning">Buy</button>
+            </td> 
+                <!-- <td><button type="button" (click)="modify(b)" style="margin-right:500;"
+                        class="btn btn-warning">Edit</button></td>
+                <td><button type="button" (click)="deleteRow(b,i)" style="margin-right:500;"
+                        class="btn btn-danger">Delete</button>
+                </td> -->
+
+                <!-- <div class="logo-image">
+                    <img src="1.png"  id="logo"/>  
+                     </div> -->
+
+            </tr>
+        </tbody>
+        
+    </table>
+  
+    <ng-template #noResults>
+        <p>No results found for "{{searchText}}".</p>
+      </ng-template>
+
+      <!-- <ng-container *ngIf="book">-->
+
+    <!-- <input type="hidden" [(ngModel)]='book.logo' placeholder="Logo" readonly>
+    <input type="hidden"[(ngModel)]='book.category' placeholder="Book Category" readonly>
+    <input type="hidden"[(ngModel)]='book.author' placeholder="Book Author" readonly>
+    <input type="hidden"[(ngModel)]='book.publisher' placeholder="Enter Class" readonly>
+    <input type="hidden"[(ngModel)]='book.published_date' placeholder="Enter Date of Birth" readonly>
+    <input type="hidden"[(ngModel)]='book.chaptersOrContent' placeholder="Enter Date of Birth" readonly>
+     -->
+  <!--   <input [(ngModel)]='book.title' placeholder="Book Title" readonly>
+    <input [(ngModel)]='book.price' placeholder="Book Price"  >
+    <input [(ngModel)]='book.readerName' placeholder="Enter Reader Name" >
+    <input [(ngModel)]='book.readerEmailId' placeholder="Enter Reader Mail Id">
+    
+    <button type button (click)="update(book)" style="margin-right:500;" class="btn btn-success">Purchase</button> 
+</ng-container> -->
+
+<div class="row ">
+    <div class="col-lg-7 mx-auto">
+        <div class="card mt-2 mx-auto p-4 bg-dark">
+            <div class="card-body bg-light">
+
+                <div class="container">
+                    <form id="contact-form" role="form">
+                        <!-- <h1 >Create Book</h1>   -->
+                        <b> PURCHASE BOOK</b>
+                        <div class="controls">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_name">Title</label>
+                                        <input id="form_name" type="text" [(ngModel)]=book.title  name="title"
+                                            class="form-control" placeholder="book Title" required="required"
+                                            data-error="Tile is required." readonly>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_price">Price</label>
+                                        <input id="form_price" type="number" [(ngModel)]=book.price name="price"
+                                            class="form-control" placeholder="book Price is"
+                                            required="required" data-error="price is required." readonly>
+                                    </div>
+                                </div>
+
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_readerName">Reader Name</label>
+                                        <input id="form_readerName" type="text" [(ngModel)]=book.readerName name="readerName"
+                                            class="form-control" placeholder="Add Reader Name" required="required"
+                                            data-error="Please add Reader Name .">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_readerEmailId">Reader Mail Id</label>
+                                        <input id="form_readerEmailId" type="text" [(ngModel)]=book.readerEmailId name="readerEmailId"
+                                            class="form-control" placeholder="Enter Reader Mail Id" required="required"
+                                            data-error="Please add Mail id .">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" (click)="update(book)"
+                                        class="btn btn-success btn-send  pt-2 btn-block" value="Purchase Book">
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- /.8 -->
+
+    </div>
+    <!-- /.row-->
+
+</div>
+</div>
+  
+</div>

@@ -1,0 +1,14 @@
+#logo {
+    float: left;
+  }
+  
+  #nav {
+    width: 1500px;
+    /* Too large, just an example */
+  }
+  
+  .navigation {
+    float: left;
+    list-style: none;
+    padding: 0;
+  }

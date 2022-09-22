@@ -1,0 +1,93 @@
+<div class="container">
+
+    <div class="row ">
+        <div class="col-lg-7 mx-auto">
+            <div class="card mt-2 mx-auto p-4 bg-dark">
+                <div class="card-body bg-light">
+
+                    <div class="container">
+                        <form id="contact-form" role="form">
+                            <b>REGESTER USER</b>
+                            <div class="controls">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_type">User Type</label>
+                                            <select id="form_type" [(ngModel)]=user.type class="form-control"
+                                                name="type" required="required"
+                                                data-error="Please specify your need.">
+                                                <option value="" selected disabled>Select User Type</option>
+                                                <option>Author</option>
+                                                <option>Reader</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_name">Name</label>
+                                            <input id="form_name" type="text" name="Name" class="form-control"
+                                                placeholder="Enter Author Name" required="required"
+                                                data-error="Author Name is required.">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_email">Email Id</label>
+                                            <input id="form_email" type="email" name="Published" class="form-control"
+                                                placeholder="Enter Author Email Id" required="required"
+                                                data-error="Author email is required.">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_phone">Phone</label>
+                                            <input id="form_phone" type="number" name="Phone" class="form-control"
+                                                placeholder="Enter Author Phone" required="required"
+                                                data-error="Author number is required.">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_password">Password</label>
+                                            <input id="form_password" type="password" name="Password"
+                                                class="form-control" placeholder="Enter Author Password"
+                                                required="required" data-error="Author passwprd is required.">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="submit" (click)="save()"
+                                            class="btn btn-success btn-send  pt-2 btn-block" value="Save User">
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- /.8 -->
+
+        </div>
+        <!-- /.row-->
+
+    </div>
+</div>
